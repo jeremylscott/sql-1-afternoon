@@ -15,13 +15,50 @@ Use [www.sqlteaching.com](http://www.sqlteaching.com/) or [sqlbolt.com](http://s
 ### Instructions
 1. Create a table called Person that records a person's ID, Name, Age, Height ( in cm ), City, FavoriteColor. 
     * ID should be an auto-incrementing id/primary key - Use type: INTEGER PRIMARY KEY AUTOINCREMENT
+    
+    CREATE TABLE Person (ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                     Name text,
+                     Age integer,
+                     Height integer,
+                     City text,
+                     FavoriteColor)
+      
 2. Add 5 different people into the Person database. 
     * Remember to not include the ID because it should auto-increment.
+    
+    INSERT INTO Person (Name,Age,Height,City,FavoriteColor)
+      VALUES 	('Ander',4,40,'Prosper','Blue'),
+		         ('Ayden',10,60,'Mckinney','Red'),
+ 		         ('Addie',8,52,'Plano','Pink'),
+ 		         ('Asher',18,76,'Van Alystyne','Black'),
+ 		         ('Tina',42,63,'Celina','Blue');
+
+    
 3. List all the people in the Person table by Height from tallest to shortest.
+
+SELECT * FROM PERSON
+ORDER BY Height DESC;
+
 4. List all the people in the Person table by Height from shortest to tallest.
+
+SELECT * FROM Person
+ORDER BY Height ASC;
+
 5. List all the people in the Person table by Age from oldest to youngest.
+
+SELECT * FROM Person
+ORDER BY Age DESC;
+
 6. List all the people in the Person table older than age 20.
+
+   SELECT * FROM Person
+   WHERE Age > 20;
+
 7. List all the people in the Person table that are exactly 18.
+
+SELECT * FROM Person
+WHERE Age = 18;
+
 8. List all the people in the Person table that are less than 20 and older than 30.
 9. List all the people in the Person table that are not 27 (Use not equals).
 10. List all the people in the Person table where their favorite color is not red.
